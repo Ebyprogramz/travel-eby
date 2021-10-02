@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    body {
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+
+    }
+    h2 {
+      text-align:center;
+      font-size:3em;
+      font-style:oblique;
+      text-decoration:underline;
+    }
+    form {
+    text-align:center;
+    }
+    #button {
+    padding:0.85em 1.85em;
+    font-weight:bolder;
+    font-size:0.85rem;
+    background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+    outline:none;
+    border:none;
+    border-radius:80px;
+    cursor:pointer;
+    opacity:0.7;
+    }
+
+    #button:hover{
+    opacity:1;
+    }
+</style>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter ur User Name"><br ><br>
+    <input type="text" name="firstname" placeholder="Enter ur First Name"> <br ><br>
+    <input type="text" name="lastname" placeholder="Enter ur Last Name"> <br ><br>
+    <input type="email" name="email" placeholder="Enter ur Email Address"> <br ><br>
+    <input type="password" name="password" placeholder="Enter ur Password"> <br ><br>
+    <input type="password" name="password1" placeholder="Renter ur Password"> <br ><br>
+    <input type="submit" id="button">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>

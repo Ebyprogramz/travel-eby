@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+<style>
+    body {
+       background: linear-gradient(to right, #ff0099, #493240);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:90vh;
+    }
+    h2 {
+      text-align:center;
+      font-size:3em;
+      font-style:oblique;
+      text-decoration:underline;
+    }
+    form {
+    text-align:center;
+    }
+
+    #button {
+    padding:0.85em 1.85em;
+    font-weight:bolder;
+    font-size:0.85rem;
+   background: linear-gradient(to right, #bc4e9c, #f80759);
+    outline:none;
+    border:none;
+    border-radius:80px;
+    cursor:pointer;
+
+    }
+
+
+ </style>
+</head>
+<body>
+<h2>Login Page</h2>
+<form action="login" method="post">
+  {% csrf_token %}
+   <input type="text" name="username" placeholder="Enter ur User Name"><br ><br>
+    <input type="password" name="password" placeholder="Enter ur Password"> <br ><br>
+    <input type="submit" id="button">
+</form>
+</body>
+</html>
